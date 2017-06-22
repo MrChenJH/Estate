@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bb"
+    tools:context="com.example.myandroiddemo.MainActivity"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="81dp">
+
+    //弹框按钮
+    <Button
+        android:id="@+id/btn_start"
+        android:layout_width="100dp"
+        android:layout_height="52dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:onClick="btn_start_onclick"
+        android:text="弹框"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintTop_creator="1" />
+
+    //更改文本颜色（红色）
+    <Button
+        android:id="@+id/btn_content1"
+        android:layout_width="0dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="10dp"
+        android:onClick="btn_content1_onclick"
+        android:text="内容1"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="@+id/btn_start"
+        app:layout_constraintRight_toRightOf="@+id/btn_start"
+        app:layout_constraintTop_toBottomOf="@+id/btn_start"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1" />
+
+    //更改文本颜色（蓝色）
+    <Button
+        android:id="@+id/btn_content2"
+        android:layout_width="0dp"
+        android:layout_height="52dp"
+        android:onClick="btn_content2_onclick"
+        android:text="内容2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="@+id/btn_content1"
+        app:layout_constraintRight_toRightOf="@+id/btn_content1"
+        app:layout_constraintTop_toBottomOf="@+id/btn_content1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1" />
+
+    //显示文本颜色（红色）
+    <TextView
+        android:id="@+id/txt_content"
+        android:layout_width="240dp"
+        android:layout_height="120dp"
+        android:layout_marginBottom="21dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_content1"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1" />
+
+    //跳转页面
+    <Button
+        android:id="@+id/btn_open"
+        android:layout_width="100dp"
+        android:layout_height="52dp"
+        android:text="进入新页面"
+        android:onClick="btn_open_click"
+        tools:layout_constraintTop_creator="1"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="7dp"
+        app:layout_constraintTop_toBottomOf="@+id/btn_content2"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="16dp" />
+
+    //照相机
+    <Button
+        android:id="@+id/btn_camera"
+        android:layout_width="0dp"
+        android:layout_height="52dp"
+        android:text="照相机"
+        android:onClick="btn_camera_onclick"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintRight_toRightOf="@+id/btn_open"
+        android:layout_marginTop="9dp"
+        app:layout_constraintTop_toBottomOf="@+id/btn_open"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/btn_open"
+        app:layout_constraintHorizontal_bias="0.0" />
+
+    //发送链接
+    <Button
+        android:id="@+id/btn_sendurl"
+        android:layout_width="0dp"
+        android:layout_height="51dp"
+        android:text="发送链接"
+        android:onClick="btn_sendurl_onclick"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintRight_toRightOf="@+id/btn_camera"
+        android:layout_marginTop="7dp"
+        app:layout_constraintTop_toBottomOf="@+id/btn_camera"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/btn_camera" />
+
+    <android.support.constraint.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/guideline"
+        app:layout_constraintGuide_begin="20dp"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteY="20dp"
+        tools:layout_editor_absoluteX="0dp" />
+</android.support.constraint.ConstraintLayout>
