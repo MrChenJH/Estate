@@ -87,7 +87,7 @@ public class LoginActivity extends AppCompatActivity  {
 //            Toast.makeText(this, "请输入正确的用户名密码登录！！", Toast.LENGTH_LONG).show();
 //        }
         Intent intent = new Intent();
-        intent.setClass(LoginActivity.this, MyOrderList.class);
+        intent.setClass(LoginActivity.this, MyOderType.class);
         startActivity(intent);
 
     }

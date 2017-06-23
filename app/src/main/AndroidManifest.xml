@@ -29,7 +29,7 @@
             android:name=".ScrollingActivity"
             android:label="@string/title_activity_scrolling"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".MyOrderList"></activity>
+        <activity android:name=".MyOderType"></activity>
     </application>
 
 </manifest>
