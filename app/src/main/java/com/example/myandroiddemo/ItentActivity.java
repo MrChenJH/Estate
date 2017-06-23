@@ -1,5 +1,6 @@
 package com.example.myandroiddemo;
 
+import android.app.Activity;
 import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,7 +10,7 @@ import android.widget.ImageButton;
 
 import java.util.Locale;
 
-public class ItentActivity extends AppCompatActivity {
+public class ItentActivity extends Activity {
 
     private TextToSpeech tts;
     private ImageButton imagebtnspeak;

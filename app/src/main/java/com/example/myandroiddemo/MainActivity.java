@@ -1,5 +1,6 @@
 package com.example.myandroiddemo;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.StrictMode;
@@ -10,7 +11,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
     private TextView txt_content;
 

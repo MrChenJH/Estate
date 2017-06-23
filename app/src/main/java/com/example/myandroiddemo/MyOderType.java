@@ -1,14 +1,17 @@
 package com.example.myandroiddemo;
 
+import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -24,7 +27,9 @@ import model.Order;
 import tools.MyBaseAdapter;
 import tools.UiUtils;
 
-public class MyOderType extends AppCompatActivity {
+import static android.R.id.message;
+
+public class MyOderType extends Activity {
     private SongAdapter songAdapter;
     private ListView mListView;
     private ListView mListView1;
@@ -35,30 +40,87 @@ public class MyOderType extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_oder_type);
-
-
         songArrayList = new ArrayList();
         songMap = new HashMap();
         songMap.put("image",R.mipmap.ic_launcher);
-        songMap.put("singer","林心如");
-        songMap.put("songInfo","一万个舍不得");
+        songMap.put("singer","陈回禀的上报考勤工单");
+        songMap.put("songInfo","06-22 06:50 - 06-22 07:10");
+        songArrayList.add(songMap);
+
+        songMap = new HashMap();
+        songMap.put("image",R.mipmap.ic_launcher);
+        songMap.put("singer","倒灶反对犯得上房贷首付");
+        songMap.put("songInfo","06-22 06:50 - 06-22 07:10");
+        songArrayList.add(songMap);
+
+
+        songMap = new HashMap();
+        songMap.put("image",R.mipmap.ic_launcher);
+        songMap.put("singer","多福多寿犯得上犯得上犯得上");
+        songMap.put("songInfo","06-22 06:50 - 06-22 07:10");
+        songArrayList.add(songMap);
+
+        songMap = new HashMap();
+        songMap.put("image",R.mipmap.ic_launcher);
+        songMap.put("singer","皮皮屁屁皮皮屁屁");
+        songMap.put("songInfo","06-22 06:50 - 06-22 07:10");
         songArrayList.add(songMap);
 
 
 
-
-
+        songMap = new HashMap();
+        songMap.put("image",R.mipmap.ic_launcher);
+        songMap.put("singer","皮皮屁屁皮皮屁屁就将计就计");
+        songMap.put("songInfo","06-22 06:50 - 06-22 07:10");
+        songArrayList.add(songMap);
         mListView =(ListView)findViewById(R.id.mListView);
-        mListView1 =(ListView)findViewById(R.id.mListView1);
-        if(songAdapter==null){
+       if(songAdapter==null){
             songAdapter = new SongAdapter(this,songArrayList);
         }else {
             //刷新适配器,不用每次都new SongAdapter(this,songArrayList)
             songAdapter.notifyDataSetChanged();
         }
         mListView.setAdapter(songAdapter);
-        mListView1.setAdapter(songAdapter);
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> arg0, View v, int index,
+                                    long arg3) {
+                onListItemClick(index,v);
+            }
+        });
+        Button     Ib=(Button)findViewById(R.id.title_bar_left);
+        Ib.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in=new Intent();
+                in.setClass(MyOderType.this,ScrollingActivity.class);
+                startActivity(in);
+            }
+        });
+
+        Button     Rb=(Button)findViewById(R.id.title_bar_right);
+        Rb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in=new Intent();
+                in.setClass(MyOderType.this,ScrollingActivity.class);
+                startActivity(in);
+            }
+        });
+
     }
+    void onListItemClick(int index,View v) {
+        Intent intent = null;
+        intent = new Intent(MyOderType.this, DeatilActivity.class);
+        this.startActivity(intent);
+        TextView  so=  (TextView)v.findViewById(R.id.songInfoTextView);
+        String te= so.getText().toString();
+        Bundle bundle = new Bundle();
+		/*字符、字符串、布尔、字节数组、浮点数等等，都可以传*/
+        bundle.putString("Name", te);
+        /*把bundle对象assign给Intent*/
+        intent.putExtras(bundle);
+    }
+
     class SongAdapter extends MyBaseAdapter<ArrayList> {
         private Context context;
         SongAdapter(Context c, ArrayList arrayList){
@@ -73,53 +135,34 @@ public class MyOderType extends AppCompatActivity {
             if(convertView==null){
                 LayoutInflater inflater = LayoutInflater.from(context);
                 convertView =inflater.inflate(R.layout.odertypelist,null);
+                 viewHolder = new ViewHolder();
 
-                viewHolder = new ViewHolder();
-                viewHolder.singerImageView =(ImageView)convertView.findViewById(R.id.singerImageView);
                 viewHolder.songInfoTextView =(TextView)convertView.findViewById(R.id.songInfoTextView);
                 viewHolder.singerTextView =(TextView)convertView.findViewById(R.id.singerTextView);
-                viewHolder.deleteSongBtn =(Button)convertView.findViewById(R.id.deleteSongBtn);
-                viewHolder.downLoadSongBtn=(Button)convertView.findViewById(R.id.downLoadSongBtn);
+
 
                 convertView.setTag(viewHolder);
-                viewHolder.deleteSongBtn.setTag(position);
-                viewHolder.downLoadSongBtn.setTag(position);
+                viewHolder.songInfoTextView.setTag(position);
+
             }else {
                 viewHolder =(ViewHolder)convertView.getTag();
             }
-            viewHolder.singerImageView.setImageResource((Integer)
-                    ((HashMap)songArrayList.get(position)).get("image"));
+
             viewHolder.singerTextView.setText((String)((HashMap)songArrayList.get(position)).get("singer"));
             viewHolder.songInfoTextView.setText((String)((HashMap)songArrayList.get(position)).get("songInfo"));
 
-            viewHolder.deleteSongBtn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    int dePosition = (Integer)v.getTag();
-                    songArrayList.remove(dePosition);
-                    songAdapter.notifyDataSetChanged();
-                }
-            });
-            viewHolder.downLoadSongBtn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    int downLoadPosition =(Integer)v.getTag();
-                    String singerStr =(String)((HashMap)songArrayList.get(downLoadPosition)).get("singer");
-                    String songStr =(String)((HashMap)songArrayList.get(downLoadPosition)).get("songInfo");
-                    String toastStr =singerStr+songStr;
-                    Toast.makeText(getApplicationContext(),"你准备下载"+toastStr,Toast.LENGTH_SHORT).show();
-                }
-            });
+
+
             return convertView;
         }
     }
+
     //避免了就是每次在getVIew的时候，都需要重新的findViewById，
     // 重新找到控件，然后进行控件的赋值以及事件相应设置。这样其实在做重复的事情)
     class ViewHolder{
-        ImageView singerImageView;
+
         TextView songInfoTextView;
         TextView singerTextView;
-        Button deleteSongBtn;
-        Button downLoadSongBtn;
+
     }
 }

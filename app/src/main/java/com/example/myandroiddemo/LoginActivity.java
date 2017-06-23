@@ -3,6 +3,7 @@ package com.example.myandroiddemo;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.StrictMode;
@@ -43,7 +44,7 @@ import static android.Manifest.permission.READ_CONTACTS;
 /**
  * A login screen that offers login via email/password.
  */
-public class LoginActivity extends AppCompatActivity  {
+public class LoginActivity extends Activity {
 
     private EditText userid;
     private EditText password;
@@ -87,7 +88,7 @@ public class LoginActivity extends AppCompatActivity  {
 //            Toast.makeText(this, "请输入正确的用户名密码登录！！", Toast.LENGTH_LONG).show();
 //        }
         Intent intent = new Intent();
-        intent.setClass(LoginActivity.this, MyOderType.class);
+        intent.setClass(LoginActivity.this, ScrollingActivity.class);
         startActivity(intent);
 
     }
