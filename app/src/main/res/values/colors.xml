@@ -4,5 +4,7 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="colorMainAccent">#CADFDC</color>
+    <color name="colorLoginBtn">#FFFFFF</color>
+    <!--登录界面-->
 
 </resources>

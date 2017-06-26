@@ -6,9 +6,9 @@
     android:orientation="vertical">
 
   <RelativeLayout
-      android:layout_width="match_parent"
-      android:layout_height="45dp"
-      android:background="@drawable/side_nav_bar">
+      android:layout_width="wrap_content"
+      android:layout_height="50dp"
+      android:background="@drawable/brgdlm">
 
     <Button
         android:id="@+id/title_bar_left"
@@ -17,7 +17,7 @@
         android:layout_alignParentLeft="true"
         android:layout_centerVertical="true"
         android:layout_marginLeft="5dp"
-        android:background="?attr/homeAsUpIndicator"
+        android:background="@drawable/back"
         android:minHeight="45dp"
         android:minWidth="45dp"
         android:textSize="14sp" />
@@ -27,8 +27,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
+        android:background="@drawable/side_nav_bar"
         android:singleLine="true"
-        android:text="本人工单"
+        android:text=""
         android:textSize="17sp" />
 
     <Button
@@ -38,20 +39,21 @@
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
         android:layout_marginRight="7dp"
-        android:background="@android:drawable/btn_star_big_on"
+        android:background="@drawable/home"
         android:minHeight="45dp"
         android:minWidth="45dp"
         android:textColor="@android:color/white"
         android:textSize="14sp" />
   </RelativeLayout>
 
-  <RelativeLayout
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content">
-
-    <ListView
-        android:id="@+id/mListView"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-  </RelativeLayout>
+        android:layout_height="wrap_content"
+        android:background="@drawable/background">
+
+        <ListView
+            android:id="@+id/mListView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </RelativeLayout>
 </LinearLayout>

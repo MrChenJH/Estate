@@ -19,15 +19,17 @@ public class DeatilActivity extends TabActivity {
 
 
         TabHost.TabSpec page1 = tabHost.newTabSpec("tab1")
-                .setIndicator("工单信息")
+                .setIndicator("")
                 .setContent(R.id.detialView);
         tabHost.addTab(page1);
 
         TabHost.TabSpec page2 = tabHost.newTabSpec("tab2")
-                .setIndicator("执行人填写")
+                .setIndicator("")
                 .setContent(R.id.detialEdit);
         tabHost.addTab(page2);
 
+      tabHost.getTabWidget().getChildAt(0).setBackgroundResource(R.drawable.worksheet);
+      tabHost.getTabWidget().getChildAt(1).setBackgroundResource(R.drawable.executor);
       Button     Ib=(Button)findViewById(R.id.title_bar_left);
       Ib.setOnClickListener(new View.OnClickListener() {
           @Override

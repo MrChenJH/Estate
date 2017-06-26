@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,8 +9,8 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:background="@drawable/side_nav_bar">
+        android:layout_height="50dp"
+        android:background="@drawable/details">
 
         <Button
             android:id="@+id/title_bar_left"
@@ -19,19 +20,11 @@
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:layout_marginLeft="5dp"
-            android:background="?attr/actionModeCloseDrawable"
+            android:background="@drawable/back"
             android:minHeight="45dp"
             android:minWidth="45dp"
             android:textSize="14sp" />
 
-        <TextView
-            android:id="@+id/title_bar_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:singleLine="true"
-            android:text="工单详情"
-            android:textSize="17sp" />
 
         <Button
             android:id="@+id/title_bar_right"
@@ -40,7 +33,7 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="7dp"
-            android:background="@android:drawable/btn_star_big_on"
+            android:background="@drawable/home"
             android:minHeight="45dp"
             android:minWidth="45dp"
             android:textColor="@android:color/white"
@@ -54,18 +47,25 @@
         <TabHost
             android:id="@android:id/tabhost"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+           >
 
 
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:orientation="vertical">
+
+                android:background="@drawable/background"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp">
 
                 <TabWidget
                     android:id="@android:id/tabs"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_width="300dp"
+                    android:layout_height="40dp"
+
                     android:orientation="horizontal" />
 
                 <FrameLayout
@@ -74,56 +74,187 @@
                     android:layout_height="fill_parent"
                     android:layout_weight="1">
 
-
-
                     <LinearLayout
                         android:id="@+id/detialView"
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:paddingTop="10dp">
+
                         <TableLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent">
+                            android:layout_height="450dp"
+                            android:stretchColumns="*">
+
+                            <View
+                                android:layout_height="1dip"
+                                android:background="#B7B7B7" />
 
                             <TableRow
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent" >
-                                <TextView android:text="工单流水号" />
-                                <TextView android:text="xxxxxxxxxxxxxxxxxx" />
+                                android:layout_height="match_parent"
+
+                                >
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:layout_column="0"
+                                    android:background="?attr/colorControlHighlight"
+                                    android:text="工单代码"
+                                    android:textColor="@android:color/background_light" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_column="1"
+                                    android:layout_marginLeft="10dp"
+                                    android:text="BUST-MT001" />
                             </TableRow>
+
+                            <View
+                                android:layout_height="1dip"
+                                android:background="#B7B7B7" />
 
                             <TableRow
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent" >
-                                <TextView android:text="工单代码" />
-                                <TextView android:text="BUST-MT001" />
+                                android:layout_height="match_parent">
+
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:layout_column="0"
+                                    android:background="?attr/colorControlHighlight"
+                                    android:text="设备信息"
+                                    android:textColor="@android:color/background_light" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_column="1"
+                                    android:layout_marginLeft="10dp"
+                                    android:text="BUST-MT001" />
                             </TableRow>
-                            <TableRow
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent" >
-                                <TextView android:text="设备信息" />
-                                <TextView android:text="BUST-MT001" />
-                            </TableRow>
+
+                            <View
+                                android:layout_height="1dip"
+                                android:background="#B7B7B7" />
 
                             <TableRow
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent" >
-                                <TextView android:text="工作描述" />
-                                <TextView android:text="嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻" />
+                                android:layout_height="match_parent"
+
+                                >
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:layout_column="0"
+                                    android:background="?attr/colorControlHighlight"
+                                    android:text="工作描述"
+                                    android:textColor="@android:color/background_light" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_column="1"
+                                    android:layout_marginLeft="10dp"
+                                    android:text="嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻" />
                             </TableRow>
+
+                            <View
+                                android:layout_height="1dip"
+                                android:background="#B7B7B7" />
+
                             <TableRow
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent" >
+                                android:layout_height="match_parent">
 
-                                <TextView android:text="计划开始" />
-                                <TextView android:text="2017-06-01 08:25:43" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:layout_column="0"
+                                    android:background="?attr/colorControlHighlight"
+                                    android:text="计划开始"
+                                    android:textColor="@android:color/background_light" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_column="1"
+                                    android:layout_marginLeft="10dp"
+                                    android:text="2017-06-01 08:25:43" />
                             </TableRow>
+
+                            <View
+                                android:layout_height="1dip"
+                                android:background="#B7B7B7" />
+
+                            <TableRow android:layout_width="match_parent">
+
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:layout_column="0"
+                                    android:background="?attr/colorControlHighlight"
+                                    android:text="计划结束"
+                                    android:textColor="@android:color/background_light" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_column="1"
+                                    android:layout_marginLeft="10dp"
+                                    android:text="2017-06-01 10:25:43" />
+
+
+                            </TableRow>
+                            <View
+                                android:layout_height="1dip"
+                                android:background="#B7B7B7" />
                             <TableRow
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent" >
+                                android:layout_height="match_parent">
 
-                                <TextView android:text="计划结束" />
-                                <TextView android:text="2017-06-01 10:25:43" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:layout_column="0"
+
+                                    android:background="?attr/colorControlHighlight"
+                                    android:text="工单流水号"
+                                    android:textColor="@android:color/background_light" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_column="1"
+                                    android:layout_marginLeft="10dp"
+                                    android:text="xxxxxxxxxxxxxxxxxx" />
+
+
+                            </TableRow>
+                            <View
+                                android:layout_height="1dip"
+                                android:background="#B7B7B7" />
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <Button
+                                    android:id="@+id/button"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_column="0"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_span="4"
+                                    android:background="@drawable/submit" />
                             </TableRow>
                         </TableLayout>
                     </LinearLayout>
@@ -132,72 +263,193 @@
                         android:id="@+id/detialEdit"
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
-                        android:orientation="vertical">
-                           <TableLayout
+                        android:orientation="vertical"
+                        android:paddingTop="10dp">
+
+                        <TableLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent">
+                            android:layout_height="450dp"
+                            android:stretchColumns="*">
 
                             <TableRow
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent" >
-                                <TextView android:text="执行人员" />
-                                <EditText
-                                    android:id="@+id/zxry"
-                                    android:layout_width="wrap_content"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:layout_width="30dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_column="0"
+                                    android:layout_weight="1"
+                                    android:background="?attr/colorControlHighlight"
+                                    android:gravity="center_vertical|center_horizontal"
+                                    android:text="执行人员"
+                                    android:textColor="@android:color/background_light" />
+
+                                <Spinner
+                                    android:id="@+id/spinner"
+                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:ems="10"
-                                    android:inputType="textPersonName"
-                                    android:text="Name" />
+                                    android:layout_column="1"
+                                    android:entries="@array/Namesssss"
+                                    android:layout_span="4" />
+
                             </TableRow>
+
+                            <View
+                                android:layout_height="1dip"
+                                android:background="#B7B7B7" />
 
                             <TableRow
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent" >
-                                <TextView android:text="工作措施" />
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/textView2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_column="0"
+                                    android:layout_weight="1"
+                                    android:background="?attr/colorControlHighlight"
+                                    android:gravity="center_vertical|center_horizontal"
+                                    android:text="工作措施"
+                                    android:textColor="@android:color/background_light" />
+
                                 <EditText
-                                    android:id="@+id/gzcs"
+                                    android:id="@+id/editText2"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:layout_column="1"
+                                    android:layout_span="4"
                                     android:ems="10"
-                                    android:inputType="textPersonName"
-                                    android:text="Name" />
+                                    android:inputType="textMultiLine"
+                                    android:minLines="3" />
+                                />
+
                             </TableRow>
-                            <TableRow
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent" >
-                                <TextView android:text="完成状态" />
-                                <EditText
-                                    android:id="@+id/wczt"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:ems="10"
-                                    android:inputType="textPersonName"
-                                    android:text="Name" />
-                            </TableRow>
+
+                            <View
+                                android:layout_height="1dip"
+                                android:background="#B7B7B7" />
 
                             <TableRow
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent" >
-                                <TextView android:text="情况描述(文本)" />
-                                <EditText
-                                    android:id="@+id/qkms"
+                                android:layout_height="match_parent">
+
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_column="0"
+                                    android:layout_weight="1"
+                                    android:background="?attr/colorControlHighlight"
+                                    android:gravity="center_vertical|center_horizontal"
+                                    android:text="完成状态"
+                                    android:textColor="@android:color/background_light" />
+
+                                <CheckBox
+                                    android:id="@+id/checkBox3"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:ems="10"
-                                    android:inputType="textPersonName"
-                                    android:text="Name" />
+                                    android:text="正常" />
+
+                                <CheckBox
+                                    android:id="@+id/checkBox2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="不正常" />
+
+                                <TextView android:text="" />
+
+                                <TextView android:text="" />
                             </TableRow>
+
+                            <View
+                                android:layout_height="1dip"
+                                android:background="#B7B7B7" />
+
                             <TableRow
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent" >
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/textView4"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="200dp"
+                                    android:layout_column="0"
+                                    android:layout_weight="1"
+                                    android:background="?attr/colorControlHighlight"
+                                    android:gravity="center_vertical|center_horizontal"
+                                    android:text="情况描述(文本)"
+                                    android:textColor="@android:color/background_light" />
+
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_column="1"
+                                    android:layout_span="4"
+                                    android:orientation="vertical">
+
+                                    <EditText
+                                        android:id="@+id/editText3"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_column="0"
+                                        android:layout_span="3"
+                                        android:ems="10"
+                                        android:inputType="textMultiLine"
+                                        android:minLines="6" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="horizontal">
+
+                                        <ImageButton
+                                            android:id="@+id/imageButton1"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginRight="10dp"
+                                            android:background="@drawable/upload" />
+
+                                        <ImageButton
+                                            android:id="@+id/imageButton2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginRight="10dp"
+
+                                            android:background="@drawable/qrcode" />
+
+                                        <ImageButton
+                                            android:id="@+id/imageButton3"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginRight="10dp"
+
+                                            android:background="@drawable/voiceupload" />
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+
+                            </TableRow>
+
+                            <View
+                                android:layout_height="1dip"
+                                android:background="#B7B7B7" />
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
 
                                 <Button
-                                    android:id="@+id/button"
-                                    android:layout_width="wrap_content"
+                                    android:id="@+id/button1"
+                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_column="0"
-                                    android:layout_span="2"
-                                    android:text="提交" />
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_span="4"
+                                    android:background="@drawable/submit" />
                             </TableRow>
                         </TableLayout>
                     </LinearLayout>

@@ -4,223 +4,476 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorMainAccent"
+    android:background="@drawable/login"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.myandroiddemo.ScrollingActivity"
     tools:showIn="@layout/activity_scrolling">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+        <!--title-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:orientation="horizontal"
+            android:textAlignment="center"
+            android:background="@drawable/loginbtn">
+         </LinearLayout>
 
+        <!--第一行-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:textAlignment="center">
+            <!--第一列-->
             <RelativeLayout
-                android:layout_width="100dp"
-                android:layout_height="match_parent">
+                android:layout_width="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:gravity="center">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:textAlignment="center">
+                    android:layout_gravity="center">
 
                     <ImageButton
-                        android:id="@+id/brgd"
+                        android:id="@+id/img_brgd"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        app:srcCompat="@mipmap/ic_launcher" />
+                        android:background="#00000000"
+                        app:srcCompat="@mipmap/brgd"
+                        android:layout_gravity="center"/>
 
                     <TextView
-                        android:id="@+id/brgdText"
+                        android:id="@+id/txt_brgd"
+                        android:layout_marginTop="5dp"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:text="本人工单"
-                        android:textAlignment="center" />
+                        android:layout_gravity="center"
+                        android:textAlignment="center"/>
                 </LinearLayout>
 
             </RelativeLayout>
-
+            <!--第二列-->
             <RelativeLayout
-                android:layout_width="100dp"
-                android:layout_height="match_parent">
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:gravity="center">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:textAlignment="center">
+                    android:layout_gravity="center">
 
                     <ImageButton
-                        android:id="@+id/clgd"
+                        android:id="@+id/img_bxgd"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center"
                         android:layout_weight="1"
-                        app:srcCompat="@mipmap/ic_launcher" />
+                        android:background="#00000000"
+                        app:srcCompat="@mipmap/bxgd" />
 
                     <TextView
-                        android:id="@+id/clgdText"
-                        android:layout_width="100dp"
+                        android:id="@+id/txt_bxgd"
+                        android:layout_marginTop="5dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="处理公单"
-                        android:textAlignment="center" />
+                        android:text="报修工单"
+                        android:layout_gravity="center"
+                        android:textAlignment="center"/>
                 </LinearLayout>
 
             </RelativeLayout>
-
+            <!--第三列-->
             <RelativeLayout
-                android:layout_width="100dp"
-                android:layout_height="match_parent">
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:gravity="center">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:textAlignment="center">
+                    android:layout_gravity="center">
 
                     <ImageButton
-                        android:id="@+id/bxgd"
+                        android:id="@+id/img_gzrz"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        app:srcCompat="@mipmap/ic_launcher" />
+                        android:background="#00000000"
+                        android:layout_gravity="center"
+                        app:srcCompat="@mipmap/gzrz"/>
 
                     <TextView
-                        android:id="@+id/bxgdText"
-                        android:layout_width="100dp"
+                        android:id="@+id/txt_gzrz"
+                        android:layout_marginTop="5dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="保修公单"
-                        android:textAlignment="center" />
+                        android:text="工作日志"
+                        android:layout_gravity="center"
+                        android:textAlignment="center"/>
                 </LinearLayout>
 
             </RelativeLayout>
 
-            <RelativeLayout
-                android:layout_width="100dp"
-                android:layout_height="match_parent">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:textAlignment="center">
-
-                    <ImageButton
-                        android:id="@+id/gstj"
-                        android:layout_width="100dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        app:srcCompat="@mipmap/ic_launcher" />
-
-                    <TextView
-                        android:id="@+id/gstjText"
-                        android:layout_width="100dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="工时统计"
-                        android:textAlignment="center" />
-                </LinearLayout>
-
-            </RelativeLayout>
         </LinearLayout>
+
+        <!--第二行-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:textAlignment="center">
+            <!--第一列-->
             <RelativeLayout
-                android:layout_width="100dp"
-                android:layout_height="match_parent">
+                android:layout_width="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:gravity="center">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:textAlignment="center">
+                    android:layout_gravity="center">
 
                     <ImageButton
-                        android:id="@+id/txl"
+                        android:id="@+id/img_xswwcgd"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center"
                         android:layout_weight="1"
-                        app:srcCompat="@mipmap/ic_launcher" />
+                        android:background="#00000000"
+                        app:srcCompat="@mipmap/xsgd"/>
 
                     <TextView
-                        android:id="@+id/txlText"
-                        android:layout_width="100dp"
+                        android:id="@+id/txt_xswwcgd"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="通讯录"
-                        android:textAlignment="center" />
+                        android:text="下属未完成工单"
+                        android:layout_marginTop="5dp"
+                        android:layout_gravity="center"
+                        android:textAlignment="center"/>
                 </LinearLayout>
 
             </RelativeLayout>
-
+            <!--第二列-->
             <RelativeLayout
-                android:layout_width="100dp"
-                android:layout_height="match_parent">
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:gravity="center">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:textAlignment="center">
+                    android:layout_gravity="center">
 
                     <ImageButton
-                        android:id="@+id/phb"
+                        android:id="@+id/img_gzlxd"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        app:srcCompat="@mipmap/ic_launcher" />
+                        android:background="#00000000"
+                        android:layout_gravity="center"
+                        app:srcCompat="@mipmap/gzlxd" />
 
                     <TextView
-                        android:id="@+id/phbText"
-                        android:layout_width="100dp"
+                        android:id="@+id/txt_tzlxd"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="排行榜"
-                        android:textAlignment="center" />
+                        android:text="工作联系单"
+                        android:layout_marginTop="5dp"
+                        android:layout_gravity="center"
+                        android:textAlignment="center"/>
                 </LinearLayout>
 
             </RelativeLayout>
-
+            <!--第三列-->
             <RelativeLayout
-                android:layout_width="100dp"
-                android:layout_height="match_parent">
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:gravity="center">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:textAlignment="center">
+                    android:layout_gravity="center">
 
                     <ImageButton
-                        android:id="@+id/sz"
+                        android:id="@+id/img_wclgd"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center"
                         android:layout_weight="1"
-                        app:srcCompat="@mipmap/ic_launcher" />
+                        android:background="#00000000"
+                        app:srcCompat="@mipmap/wclgd"/>
 
                     <TextView
-                        android:id="@+id/szText"
-                        android:layout_width="100dp"
+                        android:id="@+id/txt_wclgd"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="设置"
-                        android:textAlignment="center" />
+                        android:text="未处理工单"
+                        android:layout_marginTop="5dp"
+                        android:layout_gravity="center"
+                        android:textAlignment="center"/>
                 </LinearLayout>
 
             </RelativeLayout>
-
 
         </LinearLayout>
-    </LinearLayout>
 
+        <!--第三行-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:textAlignment="center">
+            <!--第一列-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_gravity="center">
+
+                    <ImageButton
+                        android:id="@+id/img_brydgstj"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="#00000000"
+                        app:srcCompat="@mipmap/gstj"
+                        android:layout_gravity="center"/>
+
+                    <TextView
+                        android:id="@+id/txt_brydgstj"
+                        android:layout_width="128dp"
+                        android:layout_height="wrap_content"
+                        android:text="本人月度工时统计"
+                        android:layout_marginTop="5dp"
+                        android:layout_gravity="center"
+                        android:textAlignment="center"/>
+                </LinearLayout>
+
+            </RelativeLayout>
+            <!--第二列-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_gravity="center">
+
+                    <ImageButton
+                        android:id="@+id/img_fwbjd"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:background="#00000000"
+                        app:srcCompat="@mipmap/bjd" />
+
+                    <TextView
+                        android:id="@+id/txt_fwbjd"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="服务补救单"
+                        android:layout_marginTop="5dp"
+                        android:layout_gravity="center"
+                        android:textAlignment="center"/>
+                </LinearLayout>
+
+            </RelativeLayout>
+            <!--第三列-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_gravity="center">
+
+                    <ImageButton
+                        android:id="@+id/img_txl"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="#00000000"
+                        app:srcCompat="@mipmap/txl"/>
+
+                    <TextView
+                        android:id="@+id/txt_txl"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="通讯录"
+                        android:layout_marginTop="5dp"
+                        android:layout_gravity="center"
+                        android:textAlignment="center"/>
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <!--第四行-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:textAlignment="center">
+            <!--第一列-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_gravity="center"
+                    android:weightSum="1">
+
+                    <ImageButton
+                        android:id="@+id/img_gdclvphb"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:background="#00000000"
+                        android:layout_gravity="center"
+                        app:srcCompat="@mipmap/wclphb" />
+
+                    <TextView
+                        android:id="@+id/txt_gdclvphb"
+                        android:layout_width="128dp"
+                        android:layout_height="wrap_content"
+                        android:text="工单处理率排行榜"
+                        android:layout_marginTop="5dp"
+                        android:layout_gravity="center"
+                        android:textAlignment="center"
+                        android:layout_weight="1" />
+                </LinearLayout>
+
+            </RelativeLayout>
+            <!--第二列-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_gravity="center"
+                    android:weightSum="1">
+
+                    <ImageButton
+                        android:id="@+id/img_gdwclphb"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:background="#00000000"
+                        android:layout_gravity="center"
+                        app:srcCompat="@mipmap/wclphb"/>
+
+                    <TextView
+                        android:id="@+id/txt_gdwclphb"
+                        android:layout_width="128dp"
+                        android:layout_height="wrap_content"
+                        android:text="工单完成率排行榜"
+                        android:layout_marginTop="5dp"
+                        android:layout_gravity="center"
+                        android:textAlignment="center"
+                        android:layout_weight="1" />
+                </LinearLayout>
+
+            </RelativeLayout>
+            <!--第三列-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_gravity="center">
+                    <ImageButton
+                        android:id="@+id/img_sz"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:background="#00000000"
+                        android:layout_gravity="center"
+                        app:srcCompat="@mipmap/sz"/>
+
+                    <TextView
+                        android:id="@+id/txt_sz"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="设置"
+                        android:layout_marginTop="5dp"
+                        android:layout_gravity="center"
+                        android:textAlignment="center" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <!--尾行-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:textAlignment="center"
+            android:background="@drawable/mainbottom">
+        </LinearLayout>
+
+    </LinearLayout>
 </android.support.v4.widget.NestedScrollView>

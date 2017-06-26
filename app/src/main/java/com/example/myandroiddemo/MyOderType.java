@@ -5,6 +5,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -45,34 +46,37 @@ public class MyOderType extends Activity {
         songMap.put("image",R.mipmap.ic_launcher);
         songMap.put("singer","陈回禀的上报考勤工单");
         songMap.put("songInfo","06-22 06:50 - 06-22 07:10");
+        songMap.put("color","#DD017F");
         songArrayList.add(songMap);
 
         songMap = new HashMap();
         songMap.put("image",R.mipmap.ic_launcher);
         songMap.put("singer","倒灶反对犯得上房贷首付");
         songMap.put("songInfo","06-22 06:50 - 06-22 07:10");
+        songMap.put("color","#ff669900");
         songArrayList.add(songMap);
 
+        songMap = new HashMap();
+        songMap.put("image",R.mipmap.ic_launcher);
+        songMap.put("singer","倒灶反对犯得上房贷首付");
+        songMap.put("songInfo","06-22 06:50 - 06-22 07:10");
+        songMap.put("color","#ff669900");
+        songArrayList.add(songMap);
 
         songMap = new HashMap();
         songMap.put("image",R.mipmap.ic_launcher);
         songMap.put("singer","多福多寿犯得上犯得上犯得上");
         songMap.put("songInfo","06-22 06:50 - 06-22 07:10");
+        songMap.put("color","#ff33b5e5");
         songArrayList.add(songMap);
 
         songMap = new HashMap();
         songMap.put("image",R.mipmap.ic_launcher);
-        songMap.put("singer","皮皮屁屁皮皮屁屁");
+        songMap.put("singer","多福多寿犯得上犯得上犯得上");
         songMap.put("songInfo","06-22 06:50 - 06-22 07:10");
+        songMap.put("color","#ff33b5e5");
         songArrayList.add(songMap);
 
-
-
-        songMap = new HashMap();
-        songMap.put("image",R.mipmap.ic_launcher);
-        songMap.put("singer","皮皮屁屁皮皮屁屁就将计就计");
-        songMap.put("songInfo","06-22 06:50 - 06-22 07:10");
-        songArrayList.add(songMap);
         mListView =(ListView)findViewById(R.id.mListView);
        if(songAdapter==null){
             songAdapter = new SongAdapter(this,songArrayList);
@@ -150,7 +154,8 @@ public class MyOderType extends Activity {
 
             viewHolder.singerTextView.setText((String)((HashMap)songArrayList.get(position)).get("singer"));
             viewHolder.songInfoTextView.setText((String)((HashMap)songArrayList.get(position)).get("songInfo"));
-
+            viewHolder.songInfoTextView.setTextColor(Color.parseColor((String)((HashMap)songArrayList.get(position)).get("color")));
+            viewHolder.singerTextView.setTextColor(Color.parseColor((String)((HashMap)songArrayList.get(position)).get("color")));
 
 
             return convertView;
